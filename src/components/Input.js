@@ -40,10 +40,8 @@ class Input extends Component{
 
                     <span className="cuar" onClick={this.cloneInput}> *</span>
                 </div>
-                <input datakey={this.props.datakey} type="text" name="value" onChange={this.handleInput} className="form-control" placeholder="Click here to edit" />
+                <input value={this.props.value} datakey={this.props.datakey} type="text" name="value" onChange={this.handleInput} className="form-control" placeholder="Click here to edit" />
                 
-                {/* envio el valor al value de input pero da bug, pero si lo coloco aparte si muestra */}
-                <p>{this.props.value}</p>
             
             </div>
         )
