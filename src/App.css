@@ -1,0 +1,89 @@
+body{
+  margin:0;
+}
+*{
+  box-sizing: border-box;
+  outline: none;
+}
+.body-app{
+  background-color:#c4c4c4;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding-left:350px;
+  padding-top:50px;
+  position: relative;
+}
+.menu-bar {
+  background-color: beige;
+  width: 300px;
+  height:100%;
+  padding:30px 10px;
+  position:absolute;
+  left:0;
+  top:0;  
+  transition:left .5s ease-in;
+  box-shadow: 0px 3px 5px 3px #06060659;
+}
+.menu-bar.hide{
+  left:-1000px;
+  transition:left .5s ease-in-out;
+}
+.nav-button img{
+  cursor: pointer;
+}
+.storyCard{
+  max-width: 250px;
+  padding:0;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.headCard{
+  padding:10px;
+}
+label{
+  margin-bottom:0;
+}
+.bodyCard{
+  background-color: gray;
+  padding:5px;
+  border-radius: 0 0 5px 5px;
+}
+input[type="checkbox"]{
+  margin-right:5px;
+}
+input[type="text"],input[type="text"]:focus{
+  background-color: #c7033a;
+  color:#fff;
+  border:0;
+  margin-top:5px;
+}
+textarea{
+  margin-bottom:3px !important;
+}
+textarea,input{
+  border-radius: 2px !important;
+}
+input[type="text"].default-box,input[type="text"]:focus.default-box{
+  background-color: indigo;
+}
+.input-box{
+  position:relative;  
+}
+.input-box .controls{
+  position:absolute;
+  top:0;
+  left:-80px;
+  width: fit-content;
+  background-color:#fff;
+  border-radius: 25px;
+  margin: auto;
+  display:flex;
+  align-items: center;
+  height:100%;
+}
+/*temp*/
+.cuar{
+  padding:5px;
+  margin-right:5px;
+  cursor: pointer;
+}
