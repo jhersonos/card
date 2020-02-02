@@ -9,7 +9,8 @@ class Card extends Component{
             inputs:[
                 {
                     id:0,
-                    value: ''
+                    value: '',
+                    clone:''
                 }
             ]
         }
@@ -22,8 +23,9 @@ class Card extends Component{
     cloneInput(i){
         console.log("entro")
         const clone = {
-            id: this.state.inputs.length + 1,
-            value:this.state.inputs[i].value
+            id: this.state.inputs.length,
+            value:this.state.inputs[i].value,
+            clone:"si"
         };
         console.log(clone)
         this.setState({
@@ -34,24 +36,33 @@ class Card extends Component{
     
     handleInput(e,i){
         
-        const { datakey, name, value } = e.target;
-        this.state.inputs[i] = {
-            id:i,
-            [name]: value
-        }            
+        const { value } = e.target;
         
-        console.log(this.state)
+        this.setState({
+            inputs:this.state.inputs.filter( input => {
+                if (input.id == i){
+                    input.value = value; 
+                }          
+                return input;                
+            })       
+        })
+        
+
+      //  this.state.inputs[i].value = value;
+        
+        
     }
 
     addInput(){
         const inputPush = {
             id : this.state.inputs.length,
-            value:''
-        }
+            value:'',
+            clone:''
+        }        
         this.setState({
             inputs: [...this.state.inputs, inputPush]
         })
-        console.log(this.state)
+       // console.log(this.state)
     }
 
     removeInput(index){
@@ -66,12 +77,18 @@ class Card extends Component{
     render(){
         
         const input = this.state.inputs.map((input, i)=>{
-            console.log(input)
-            return(
-                <Input value={input.value} id={i} datakey={i} key={i} handleInput={this.handleInput} addInput={this.addInput} removeInput={this.removeInput.bind(this,i)} cloneInput={this.cloneInput.bind(this,i)} />
-            )
+            //console.log(input)
+            if(input.clone === "si"){
+                return(
+                    <Input value={input.value} id={i} datakey={i} key={i} handleInput={this.handleInput} addInput={this.addInput} removeInput={this.removeInput.bind(this,i)} cloneInput={this.cloneInput.bind(this,i)} />
+                )
+            }else{
+                return(
+                    <Input id={i} datakey={i} key={i} handleInput={this.handleInput} addInput={this.addInput} removeInput={this.removeInput.bind(this,i)} cloneInput={this.cloneInput.bind(this,i)} />
+                )
+            }
+            
         })
-
         return(
             <div className="storyCard mt-2">
                 <div className="headCard">

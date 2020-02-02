@@ -6,16 +6,17 @@ class Input extends Component{
         super(props);
         this.state = {                
             id:'',
-            value: ''
+            value: '',
+            clone:''
         };
         this.addInput = this.addInput.bind(this)
         this.removeInput = this.removeInput.bind(this)
         this.cloneInput = this.cloneInput.bind(this)
         this.handleInput = this.handleInput.bind(this)
     }
-    handleInput(e){
+    handleInput(e){        
         this.props.handleInput(e,this.props.datakey);
-        //console.log(this.state)
+        console.log(this.props.datakey)
     }
 
     addInput(){
