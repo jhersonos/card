@@ -5,6 +5,7 @@ import Input from './Input';
 class Card extends Component{
     constructor(){
         super();
+        
         this.state = {
             inputs:[
                 {
@@ -14,6 +15,7 @@ class Card extends Component{
                 }
             ]
         }
+
         this.addInput = this.addInput.bind(this)
         this.removeInput = this.removeInput.bind(this)
         this.cloneInput = this.cloneInput.bind(this)
@@ -74,6 +76,8 @@ class Card extends Component{
             })
         }
     }
+
+    
     render(){
         
         const input = this.state.inputs.map((input, i)=>{

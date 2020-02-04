@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+import bigPlus from '../assets/bigPlus.png';
+import bin from '../assets/bin.png';
+import clone from '../assets/clone.png';
+import plus from '../assets/plus.png';
+
 class Input extends Component{
     
     constructor(props){
@@ -35,11 +40,11 @@ class Input extends Component{
         return(
             <div className="input-box">
                 <div className="controls">
-                    <span id={this.props.id} className="cuar" onClick={this.addInput}>+</span>
+                    <span id={this.props.id} className="cuar" onClick={this.addInput}><img src={plus} /></span>
                     
-                    <span className="cuar" onClick={this.removeInput}> -</span>
+                    <span className="cuar" onClick={this.removeInput}><img src={bin} /></span>
 
-                    <span className="cuar" onClick={this.cloneInput}> *</span>
+                    <span className="cuar" onClick={this.cloneInput}> <img src={clone} /></span>
                 </div>
                 <input value={this.props.value} datakey={this.props.datakey} type="text" name="value" onChange={this.handleInput} className="form-control" placeholder="Click here to edit" />
                 

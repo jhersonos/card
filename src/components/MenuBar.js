@@ -6,11 +6,14 @@ class Menubar extends Component{
 
     constructor(){
         super();
-        this.state = {
-            relation:''
-        }
+        this.state = [
+            {
+                relation:''
+            }
+        ]
+        
         this.addCard = this.addCard.bind(this)
-
+        this.addMessage = this.addMessage.bind(this)
     }
 
     addCard(){
@@ -19,6 +22,9 @@ class Menubar extends Component{
             relation: ''
         }        
         this.props.addCard(this.state)
+    }
+    addMessage(){
+        this.props.addMessage()
     }
 
     render(){
@@ -33,7 +39,7 @@ class Menubar extends Component{
                     </div>
                     <div className="col-md-6">
                         <div className="nav-message text-center">
-                            <img src={comment} />
+                            <img src={comment}  onClick={this.addMessage}/>
                             <p>Add message</p>
                         </div>
                     </div>
