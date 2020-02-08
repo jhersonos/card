@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import bigPlus from '../assets/bigPlus.png';
 import bin from '../assets/bin.png';
 import clone from '../assets/clone.png';
 import plus from '../assets/plus.png';
